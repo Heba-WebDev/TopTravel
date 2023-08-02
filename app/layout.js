@@ -1,7 +1,8 @@
 import "./globals.css";
-import { Barlow } from "next/font/google";
+import { Barlow, Oswald, Raleway } from "next/font/google";
+import Navbar from "@/components/globals/Navbar";
 
-const barlow = Barlow({ weight: ["400", "500"], subsets: ["latin"] });
+const ralway = Raleway({ weight: ["400", "500", "700"], subsets: ["latin"] });
 
 export const metadata = {
   title: "Top Travel",
@@ -11,7 +12,10 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={barlow.className}>{children}</body>
+      <body className={ralway.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
