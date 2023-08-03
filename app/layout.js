@@ -1,5 +1,5 @@
 import "./globals.css";
-import { Barlow, Oswald, Raleway } from "next/font/google";
+import { Raleway } from "next/font/google";
 import Navbar from "@/components/globals/Navbar";
 
 const ralway = Raleway({ weight: ["400", "500", "700"], subsets: ["latin"] });
