@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 export default function ExploreDestinations() {
   return (
-    <aside className="bg-orange-50">
+    <aside>
       <section className="container-custom flex flex-col-reverse gap-6 md:grid md:grid-cols-2 md:gap-0">
-        <div className="flex flex-col gap-6 self-center">
+        <div className="flex flex-col gap-6 self-center pb-8 md:pb-0">
           <h2 className="w-[100%] text-5xl font-extrabold md:w-[85%]">
             Nearby or distant locations, we handle it all
           </h2>
@@ -15,7 +15,7 @@ export default function ExploreDestinations() {
           </p>
           <Link
             href="/"
-            className="mb-[3rem] w-[80%] border-black bg-black px-3 py-2 text-center text-white hover:bg-orange-50  hover:text-black hover:transition hover:duration-300 hover:ease-in-out md:mb-0  md:w-[75%] lg:w-[60%]"
+            className="w-[80%] border border-black bg-black  px-2 py-3 text-center text-white  hover:bg-orange-50 hover:text-black hover:transition hover:duration-300 hover:ease-in-out md:w-[75%] lg:w-[60%]"
           >
             EXPLORE DESTINATIONS
           </Link>
@@ -49,7 +49,7 @@ export default function ExploreDestinations() {
           </p>
           <Link
             href="/"
-            className="w-[80%] border border-black bg-black px-3 py-2 text-center text-white  hover:bg-orange-50 hover:text-black hover:transition hover:duration-300 hover:ease-in-out md:w-[75%] lg:w-[60%]"
+            className="w-[80%] border border-black bg-black  px-2 py-3 text-center text-white  hover:bg-orange-50 hover:text-black hover:transition hover:duration-300 hover:ease-in-out md:w-[75%] lg:w-[60%]"
           >
             EXPLORE DESTINATIONS
           </Link>
