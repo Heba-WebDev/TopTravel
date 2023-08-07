@@ -4,7 +4,7 @@ import { useState } from "react";
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <nav className="container-custom relative flex items-center justify-between py-[1rem] font-light md:py-[2rem]">
+    <nav className="container-custom relative flex items-center justify-between py-[1.5rem] font-light md:py-[2rem]">
       <div className="flex-1 ">
         {/* Logo */}
         <span className=" text-normal py-4 font-bold">
