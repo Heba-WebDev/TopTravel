@@ -7,9 +7,9 @@ export default function Navbar() {
     <nav className="container-custom relative flex items-center justify-between py-[1.5rem] font-light md:py-[2rem]">
       <div className="flex-1 ">
         {/* Logo */}
-        <span className=" text-normal py-4 font-bold">
-          TOP TRAVEL {isNavOpen}
-        </span>
+        <Link href="/" className=" text-normal py-4 font-bold">
+          TOP TRAVEL
+        </Link>
       </div>
       {/* Hamburger menu */}
       <div className="md:hidden">
@@ -52,7 +52,7 @@ export default function Navbar() {
       {/* Big screen's nav links */}
       <ul className="hidden items-center justify-end gap-6  text-base md:flex ">
         <li>
-          <Link href="#">Destenations</Link>
+          <Link href="/destinations">Destenations</Link>
         </li>
         <li>
           <Link href="#">Partners</Link>
@@ -66,23 +66,34 @@ export default function Navbar() {
       </ul>
       {/* Small screen's nav links */}
       {isNavOpen && (
-        <div class="cursor-pointer md:hidden">
+        <div className="cursor-pointer md:hidden">
           <ul
-            class="translate absolute left-[0%] top-16 z-20
+            className="translate absolute left-[0%] top-16 z-20
    mt-[-1%] flex w-[100%] flex-col items-center space-y-[5rem] bg-orange-50
    py-[5rem] transition duration-300 ease-in"
           >
             <li>
-              <Link href="#">Destenations</Link>
+              <Link
+                href="/destinations"
+                onClick={() => setIsNavOpen(!isNavOpen)}
+              >
+                Destenations
+              </Link>
             </li>
             <li>
-              <Link href="#">Partners</Link>
+              <Link href="#" onClick={() => setIsNavOpen(!isNavOpen)}>
+                Partners
+              </Link>
             </li>
             <li>
-              <Link href="#">Why Top Travel</Link>
+              <Link href="#" onClick={() => setIsNavOpen(!isNavOpen)}>
+                Why Top Travel
+              </Link>
             </li>
             <li>
-              <Link href="#">Contact</Link>
+              <Link href="#" onClick={() => setIsNavOpen(!isNavOpen)}>
+                Contact
+              </Link>
             </li>
           </ul>
         </div>

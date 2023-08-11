@@ -1,6 +1,7 @@
 import "./globals.css";
 import { Raleway } from "next/font/google";
 import Navbar from "@/components/globals/Navbar";
+import Footer from "@/components/globals/Footer";
 
 const ralway = Raleway({ weight: ["400", "500", "700"], subsets: ["latin"] });
 
