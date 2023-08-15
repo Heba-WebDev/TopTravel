@@ -89,7 +89,7 @@ export default function Destinations() {
                 <div key={destination.id} className="">
                   <div className="flex flex-col gap-2 pb-6">
                     <h2 className="text-xl font-bold">{destination.country}</h2>
-                    <Link href="#">
+                    <Link href={`/destinations/${destination.city}`}>
                       <h3 className="text-lg">{destination.city}</h3>
                     </Link>
                   </div>
@@ -131,7 +131,7 @@ export default function Destinations() {
                 <div key={destination.id} className="">
                   <div className="flex flex-col gap-2 pb-6">
                     <h2 className="text-xl font-bold">{destination.country}</h2>
-                    <Link href="#">
+                    <Link href={`/destinations/${destination.city}`}>
                       <h3 className="text-lg">{destination.city}</h3>
                     </Link>
                   </div>
@@ -173,7 +173,7 @@ export default function Destinations() {
                 <div key={destination.id} className="">
                   <div className="flex flex-col gap-2 pb-6">
                     <h2 className="text-xl font-bold">{destination.country}</h2>
-                    <Link href="#">
+                    <Link href={`/destinations/${destination.city}`}>
                       <h3 className="text-lg">{destination.city}</h3>
                     </Link>
                   </div>
