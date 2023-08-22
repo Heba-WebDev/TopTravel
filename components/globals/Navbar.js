@@ -1,14 +1,43 @@
 "use client";
 import Link from "next/link";
+import Image from "next/image";
 import { useState } from "react";
+const links = [
+  {
+    label: "Home",
+    path: "/",
+  },
+  {
+    label: "Destinations",
+    path: "/destinations",
+  },
+  {
+    label: "FAQs",
+    path: "/faqs",
+  },
+  {
+    label: "Contact Us",
+    path: "/contact",
+  },
+];
 export default function Navbar() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   return (
-    <nav className="container-custom relative flex items-center justify-between py-[1.5rem] font-light md:py-[2rem]">
+    <nav className="container-custom relative flex items-center justify-between py-[1.5rem] font-light">
       <div className="flex-1 ">
         {/* Logo */}
-        <Link href="/" className=" text-normal py-4 font-bold">
-          TOP TRAVEL
+        <Link
+          href="/"
+          className="text-normal flex items-center gap-2 py-4 font-bold"
+        >
+          TOP{" "}
+          <Image
+            src="/images/globals/icons8-airplane-50.png"
+            alt="airplane"
+            width={20}
+            height={20}
+          />
+          TRAVEL
         </Link>
       </div>
       {/* Hamburger menu */}
@@ -50,51 +79,34 @@ export default function Navbar() {
         )}
       </div>
       {/* Big screen's nav links */}
-      <ul className="hidden items-center justify-end gap-6  text-base md:flex ">
-        <li>
-          <Link href="/destinations">Destenations</Link>
-        </li>
-        <li>
-          <Link href="#">Partners</Link>
-        </li>
-        <li>
-          <Link href="#">Why Top Travel</Link>
-        </li>
-        <li>
-          <Link href="#">Contact</Link>
-        </li>
+      <ul className="hidden items-center justify-end gap-6 text-sm font-[500]  md:flex ">
+        {links.map(({ label, path }) => (
+          <li key={path}>
+            <Link
+              href={path}
+              className="hover:border-b-4 hover:border-b-orange-600"
+            >
+              {label}
+            </Link>
+          </li>
+        ))}
       </ul>
+
       {/* Small screen's nav links */}
       {isNavOpen && (
         <div className="cursor-pointer md:hidden">
           <ul
-            className="translate absolute left-[0%] top-16 z-20
-   mt-[-1%] flex w-[100%] flex-col items-center space-y-[5rem] bg-orange-50
+            className="translate absolute left-[0%] top-[5rem] z-20
+   mt-[-1%] flex w-[100%] flex-col items-center space-y-[5rem] bg-gray-50
    py-[5rem] transition duration-300 ease-in"
           >
-            <li>
-              <Link
-                href="/destinations"
-                onClick={() => setIsNavOpen(!isNavOpen)}
-              >
-                Destenations
-              </Link>
-            </li>
-            <li>
-              <Link href="#" onClick={() => setIsNavOpen(!isNavOpen)}>
-                Partners
-              </Link>
-            </li>
-            <li>
-              <Link href="#" onClick={() => setIsNavOpen(!isNavOpen)}>
-                Why Top Travel
-              </Link>
-            </li>
-            <li>
-              <Link href="#" onClick={() => setIsNavOpen(!isNavOpen)}>
-                Contact
-              </Link>
-            </li>
+            {links.map(({ label, path }) => (
+              <li key={path}>
+                <Link href={path} onClick={() => setIsNavOpen(!isNavOpen)}>
+                  {label}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
       )}
