@@ -1,0 +1,26 @@
+[
+  {
+    "id": 0,
+    "destination": "London",
+    "country": "England",
+    "startingPrice": "1449"
+  },
+  {
+    "id": 1,
+    "destination": "Paris",
+    "country": "France",
+    "startingPrice": "1699"
+  },
+  {
+    "id": 2,
+    "destination": "Singapore",
+    "country": "Singapore",
+    "startingPrice": "1300"
+  },
+  {
+    "id": 3,
+    "destination": "Tokyo",
+    "country": "Japan",
+    "startingPrice": "2399"
+  }
+]
