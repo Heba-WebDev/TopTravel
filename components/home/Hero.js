@@ -3,8 +3,8 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="container-custom  h-[100%]">
-      <div className="relative flex h-[70%] items-center justify-between rounded-2xl bg-hero bg-center py-[6rem]">
+    <div className="container-custom  h-[100vh]  py-[2rem]">
+      <div className="relative flex h-[90%] items-center justify-between rounded-2xl bg-hero bg-center ">
         <div className="">
           <h1 className="mt-[-150px] text-center text-5xl font-extrabold italic text-white md:text-7xl lg:text-8xl">
             Unforgettable{" "}
