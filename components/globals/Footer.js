@@ -1,5 +1,8 @@
+"use client";
+import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { validateEmail } from "../../utils/validation";
 const links = [
   {
     label: "Home",
@@ -21,6 +24,18 @@ const links = [
 export default function Footer() {
   const now = new Date();
   const year = now.getFullYear();
+  const [email, setEmail] = useState("");
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    if (validateEmail(email)) {
+      console.log("it's an email");
+    } else {
+      console.log("invalid email");
+    }
+  };
+  const handleChange = (event) => {
+    setEmail(event.target.value);
+  };
   return (
     <footer className="container-custom border-top grid gap-6  border border-b-0 border-l-0 border-r-0 border-gray-300  py-[4rem] text-sm">
       <section className="grid grid-cols-1 justify-around gap-8 md:grid-cols-2 md:gap-0">
@@ -41,7 +56,10 @@ export default function Footer() {
 
           <div className="flex flex-col items-center gap-6 pt-6 text-left md:flex-row md:justify-normal md:gap-10">
             {links.map(({ label, path }) => (
-              <li key={path} className="list-none self-start pt-4 md:pt-0">
+              <li
+                key={path}
+                className="list-none self-start pt-4 hover:text-orange-600 md:pt-0"
+              >
                 <Link href={path}>{label}</Link>
               </li>
             ))}
@@ -53,7 +71,7 @@ export default function Footer() {
             Sign up with your email address to stay in-the-know with travel
             recs, hotel features & travel advisor news.
           </p>
-          <form className="flex">
+          <form className="flex" onSubmit={handleSubmit}>
             <label htmlFor="email"></label>
             <input
               type="text"
@@ -61,9 +79,13 @@ export default function Footer() {
               name="email"
               autoComplete="on"
               placeholder="Enter email"
+              value={email}
+              onChange={handleChange}
               className="w-full p-3 placeholder:px-2"
             />
-            <button className="w-1/2 bg-gray-500 p-3 text-white">Submit</button>
+            <button className="w-1/2 bg-gray-500 p-3 text-white hover:bg-orange-600">
+              Submit
+            </button>
           </form>
         </div>
       </section>
@@ -71,51 +93,6 @@ export default function Footer() {
         <span>© Copyright, Top Travel {year}. All rights reserved.</span>
         <span>Terms & Conditions.</span>
       </section>
-      {/* <div className="  grid-rows-auto grid auto-cols-fr grid-cols-2 gap-x-1 gap-y-10  md:grid-cols-6 lg:grid-cols-8 lg:gap-y-0 lg:py-14">
-        <div className="col-span-3 row-span-2 text-xl font-bold uppercase md:col-start-1 md:col-end-3 md:row-start-1 md:row-end-2">
-          <span>Top Travel</span>
-        </div>
-        <div className="col-span-2 row-span-2 flex flex-col gap-y-3 uppercase md:col-start-3 md:col-end-6 lg:col-start-3 lg:col-end-5">
-          <span className="font-bold">For Travelers</span>
-          <ul className="flex flex-col gap-3 ">
-            <li>
-              <Link href="/">HOME</Link>
-            </li>
-            <li>
-              <Link href="/">Destinations</Link>
-            </li>
-            <li>
-              <Link href="/">FAQs</Link>
-            </li>
-            <li>
-              <Link href="/">CONTACT US</Link>
-            </li>
-          </ul>
-        </div>
-
-        <div className="col-span-2 row-span-1 flex flex-col gap-y-3 uppercase md:col-start-9 md:col-end-13 md:row-start-1 md:row-end-2">
-          <span className="font-bold">Subscribe</span>
-          <p className="pb-3">
-            Sign up with your email address to stay in-the-know with travel
-            recs, hotel features & travel advisor news.
-          </p>
-          <form className="flex">
-            <label htmlFor="email"></label>
-            <input
-              type="text"
-              id="email"
-              name="email"
-              autoComplete="on"
-              placeholder="Enter email"
-              className="w-full p-3 placeholder:px-2"
-            />
-            <button className="w-1/2 bg-gray-500 p-3 text-white">Submit</button>
-          </form>
-          <span className="mt-1 text-gray-400  md:bottom-2">
-            © {year} Top Travel, All Rights Reserved
-          </span>
-        </div>
-      </div> */}
     </footer>
   );
 }

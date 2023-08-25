@@ -3,7 +3,10 @@ import Link from "next/link";
 
 export default function HowItWorks() {
   return (
-    <div className="container-custom grid justify-center py-[12rem]">
+    <div
+      className="container-custom grid justify-center scroll-smooth py-[12rem]"
+      id="howitworks"
+    >
       <div
         className="relative grid gap-4 text-center font-light
       "
@@ -12,8 +15,8 @@ export default function HowItWorks() {
           How it <span className="text-orange-600">works</span>
         </h2>
         <p className="text-gray-600">
-          We ensure that you’ll embark on a perfectly planned, safe vacation at
-          a price you can afford.
+          Experience a flawlessly organized and secure vacation, designed to fit
+          your budget without compromising quality.
         </p>
         <div className="absolute left-[70%] top-[105%] w-[30%] opacity-[0.5] md:right-[50%] md:top-[105%]">
           <Image
@@ -21,6 +24,7 @@ export default function HowItWorks() {
             alt=""
             width={150}
             height={40}
+            className="h-auto w-auto"
           />
         </div>
       </div>
@@ -32,6 +36,7 @@ export default function HowItWorks() {
               alt=""
               width={40}
               height={40}
+              className="h-auto w-auto"
             />
           </div>
           <div className="absolute left-0 top-[-5%] h-[100%] w-[100%]">
@@ -40,19 +45,27 @@ export default function HowItWorks() {
               alt=""
               width={150}
               height={40}
+              className="h-auto w-auto"
             />
           </div>
-          <div className="grid gap-2">
+          <div className="z-20 grid gap-2 ">
             <h3 className="text-xl font-bold">Choose a package</h3>
             <p className="max-w-[18rem] text-sm font-light text-gray-500">
-              Choose one of our travel packages and customize it if needed
+              Select from our range of travel packages and personalize it to
+              suit your preferences.
             </p>
           </div>
         </div>
 
         <div className="relative grid gap-8 bg-white px-4 py-[2rem]">
-          <div>
-            <Image src="/images/home/fill.svg" alt="" width={40} height={40} />
+          <div className="">
+            <Image
+              src="/images/home/fill.svg"
+              alt=""
+              width={40}
+              height={40}
+              className="h-auto w-auto"
+            />
           </div>
           <div className="absolute right-0 top-[-5%] h-[100%] w-[100%]">
             <Image
@@ -60,12 +73,14 @@ export default function HowItWorks() {
               alt=""
               width={150}
               height={40}
+              className="h-auto w-auto"
             />
           </div>
-          <div className="grid gap-2">
+          <div className="z-20 grid gap-2">
             <h3 className="text-xl font-bold">Fill a form</h3>
             <p className="max-w-[18rem] text-sm font-light text-gray-500">
-              Choose one of our travel packages and customize it if needed
+              Provide arrival and departure dates, along with other essential
+              details.
             </p>
           </div>
         </div>
@@ -80,12 +95,13 @@ export default function HowItWorks() {
               alt=""
               width={150}
               height={40}
+              className="z-0 h-auto w-auto"
             />
           </div>
-          <div className="grid gap-2">
+          <div className="z-20 grid gap-2 ">
             <h3 className="text-xl font-bold">Book the trip</h3>
             <p className="max-w-[18rem] text-sm font-light text-gray-500">
-              Choose one of our travel packages and customize it if needed
+              Confirm the details, make payment and start packing your bags.
             </p>
           </div>
         </div>
