@@ -1,11 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-export default function DealsCard({
-  key,
-  destination,
-  country,
-  startingPrice,
-}) {
+export default function DealsCard({ destination, country, startingPrice }) {
   return (
     <div className="max-w-[350px]">
       <Image

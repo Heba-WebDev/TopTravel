@@ -3,7 +3,6 @@
 import data from "../../app/api/data.json";
 import DealsCard from "./DealsCard";
 export default function Deals() {
-  console.log(data);
   return (
     <div className=" bg-blue-50 py-[8rem]">
       <div
